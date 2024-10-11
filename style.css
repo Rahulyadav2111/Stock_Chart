@@ -163,4 +163,7 @@
     .chart .chartBody .myChart{
         height: 350px;
     }
+    .chart .chartBody{
+        width: 500cm;
+    }
   }
