@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 .container{
     display: flex;
@@ -62,7 +61,7 @@
     font-weight: bold;
 }
 .chart .chartBody{
-    width: 800cm;
+    width: 700cm;
 }
 .chart .chartBody .myChart{
     height: 550px;
