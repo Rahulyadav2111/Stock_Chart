@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Chart</title>
+</head>
+<body>
+    <div id="loading" class="loader" style="display: none;"></div>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="searchInput" id="searchInput" placeholder="Search Index Name..." onkeyup="showSuggestions(this.value)">
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+        <div class="index_names">
+            <button class="btn" onclick="updateChart('Nifty 50')">Nifty 50</button>
+<button class="btn" onclick="updateChart('Nifty Next 50')">Nifty Next 50</button>
+<button class="btn" onclick="updateChart('Nifty 100')">Nifty 100</button>
+<button class="btn" onclick="updateChart('Nifty 200')">Nifty 200</button>
+<button class="btn" onclick="updateChart('Nifty 500')">Nifty 500</button>
+<button class="btn" onclick="updateChart('Nifty Midcap 50')">Nifty Midcap 50</button>
+<button class="btn" onclick="updateChart('NIFTY Midcap 100')">NIFTY Midcap 100</button>
+<button class="btn" onclick="updateChart('NIFTY Smallcap 100')">NIFTY Smallcap 100</button>
+<button class="btn" onclick="updateChart('Nifty50 Dividend Points')">Nifty50 Dividend Points</button>
+<button class="btn" onclick="updateChart('Nifty Auto')">Nifty Auto</button>
+<button class="btn" onclick="updateChart('Nifty Bank')">Nifty Bank</button>
+<button class="btn" onclick="updateChart('Nifty Energy')">Nifty Energy</button>
+<button class="btn" onclick="updateChart('Nifty Financial Services')">Nifty Financial Services</button>
+<button class="btn" onclick="updateChart('Nifty FMCG')">Nifty FMCG</button>
+<button class="btn" onclick="updateChart('Nifty IT')">Nifty IT</button>
+<button class="btn" onclick="updateChart('Nifty Media')">Nifty Media</button>
+<button class="btn" onclick="updateChart('Nifty Metal')">Nifty Metal</button>
+<button class="btn" onclick="updateChart('Nifty MNC')">Nifty MNC</button>
+<button class="btn" onclick="updateChart('Nifty Pharma')">Nifty Pharma</button>
+<button class="btn" onclick="updateChart('Nifty PSU Bank')">Nifty PSU Bank</button>
+<button class="btn" onclick="updateChart('Nifty Realty')">Nifty Realty</button>
+<button class="btn" onclick="updateChart('Nifty India Consumption')">Nifty India Consumption</button>
+<button class="btn" onclick="updateChart('Nifty Commodities')">Nifty Commodities</button>
+<button class="btn" onclick="updateChart('Nifty Dividend Opportunities 50')">Nifty Dividend Opportunities 50</button>
+<button class="btn" onclick="updateChart('Nifty Infrastructure')">Nifty Infrastructure</button>
+<button class="btn" onclick="updateChart('Nifty PSE')">Nifty PSE</button>
+<button class="btn" onclick="updateChart('Nifty Services Sector')">Nifty Services Sector</button>
+<button class="btn" onclick="updateChart('Nifty50 Shariah')">Nifty50 Shariah</button>
+<button class="btn" onclick="updateChart('Nifty500 Shariah')">Nifty500 Shariah</button>
+<button class="btn" onclick="updateChart('Nifty Low Volatility 50')">Nifty Low Volatility 50</button>
+<button class="btn" onclick="updateChart('Nifty Alpha 50')">Nifty Alpha 50</button>
+<button class="btn" onclick="updateChart('Nifty High Beta 50')">Nifty High Beta 50</button>
+<button class="btn" onclick="updateChart('Nifty100 Equal Weight')">Nifty100 Equal Weight</button>
+<button class="btn" onclick="updateChart('Nifty100 Liquid 15')">Nifty100 Liquid 15</button>
+<button class="btn" onclick="updateChart('Nifty CPSE')">Nifty CPSE</button>
+<button class="btn" onclick="updateChart('Nifty50 Value 20')">Nifty50 Value 20</button>
+<button class="btn" onclick="updateChart('Nifty Midcap Liquid 15')">Nifty Midcap Liquid 15</button>
+<button class="btn" onclick="updateChart('Nifty Shariah 25')">Nifty Shariah 25</button>
+<button class="btn" onclick="updateChart('India VIX')">India VIX</button>
+<button class="btn" onclick="updateChart('Nifty Growth Sectors 15')">Nifty Growth Sectors 15</button>
+<button class="btn" onclick="updateChart('Nifty50 TR 1x Inverse')">Nifty50 TR 1x Inverse</button>
+<button class="btn" onclick="updateChart('Nifty50 TR 2x Leverage')">Nifty50 TR 2x Leverage</button>
+<button class="btn" onclick="updateChart('Nifty50 PR 1x Inverse')">Nifty50 PR 1x Inverse</button>
+<button class="btn" onclick="updateChart('Nifty50 PR 2x Leverage')">Nifty50 PR 2x Leverage</button>
+<button class="btn" onclick="updateChart('NIFTY100 Quality 30')">NIFTY100 Quality 30</button>
+<button class="btn" onclick="updateChart('Nifty 50 Futures Index')">Nifty 50 Futures Index</button>
+<button class="btn" onclick="updateChart('NIFTY50 Equal Weight')">NIFTY50 Equal Weight</button>
+<button class="btn" onclick="updateChart('Nifty 50 Futures TR Index')">Nifty 50 Futures TR Index</button>
+<button class="btn" onclick="updateChart('Nifty Mahindra Group')">Nifty Mahindra Group</button>
+<button class="btn" onclick="updateChart('Nifty Aditya Birla Group')">Nifty Aditya Birla Group</button>
+<button class="btn" onclick="updateChart('Nifty Tata Group')">Nifty Tata Group</button>
+<button class="btn" onclick="updateChart('Nifty Tata Group 25% Cap')">Nifty Tata Group 25% Cap</button>
+<button class="btn" onclick="updateChart('Nifty Private Bank')">Nifty Private Bank</button>
+<button class="btn" onclick="updateChart('Nifty Smallcap 250')">Nifty Smallcap 250</button>
+<button class="btn" onclick="updateChart('Nifty Smallcap 50')">Nifty Smallcap 50</button>
+<button class="btn" onclick="updateChart('Nifty MidSmallcap 400')">Nifty MidSmallcap 400</button>
+<button class="btn" onclick="updateChart('Nifty Midcap 150')">Nifty Midcap 150</button>
+<button class="btn" onclick="updateChart('Nifty Midcap Select')">Nifty Midcap Select</button>
+<button class="btn" onclick="updateChart('NIFTY LargeMidcap 250')">NIFTY LargeMidcap 250</button>
+<button class="btn" onclick="updateChart('NIFTY SME EMERGE')">NIFTY SME EMERGE</button>
+<button class="btn" onclick="updateChart('Nifty Oil & Gas')">Nifty Oil & Gas</button>
+<button class="btn" onclick="updateChart('Nifty Financial Services 25/50')">Nifty Financial Services 25/50</button>
+<button class="btn" onclick="updateChart('Nifty Healthcare Index')">Nifty Healthcare Index</button>
+<button class="btn" onclick="updateChart('Nifty500 Multicap 50:25:25')">Nifty500 Multicap 50:25:25</button>
+<button class="btn" onclick="updateChart('Nifty Microcap 250')">Nifty Microcap 250</button>
+<button class="btn" onclick="updateChart('Nifty Total Market')">Nifty Total Market</button>
+<button class="btn" onclick="updateChart('Nifty India Digital')">Nifty India Digital</button>
+<button class="btn" onclick="updateChart('Nifty Mobility')">Nifty Mobility</button>
+<button class="btn" onclick="updateChart('Nifty India Defence')">Nifty India Defence</button>
+<button class="btn" onclick="updateChart('Nifty Financial Services Ex-Bank')">Nifty Financial Services Ex-Bank</button>
+<button class="btn" onclick="updateChart('Nifty Housing')">Nifty Housing</button>
+<button class="btn" onclick="updateChart('Nifty Transportation & Logistics')">Nifty Transportation & Logistics</button>
+<button class="btn" onclick="updateChart('Nifty MidSmall Financial Services')">Nifty MidSmall Financial Services</button>
+<button class="btn" onclick="updateChart('Nifty MidSmall Healthcare')">Nifty MidSmall Healthcare</button>
+<button class="btn" onclick="updateChart('Nifty MidSmall IT & Telecom')">Nifty MidSmall IT & Telecom</button>
+<button class="btn" onclick="updateChart('Nifty MidSmall India Consumption')">Nifty MidSmall India Consumption</button>
+<button class="btn" onclick="updateChart('Nifty REITs & InvITs')">Nifty REITs & InvITs</button>
+<button class="btn" onclick="updateChart('Nifty Core Housing')">Nifty Core Housing</button>
+<button class="btn" onclick="updateChart('Nifty500 Multicap Infrastructure 50:30:20')">Nifty500 Multicap Infrastructure 50:30:20</button>
+<button class="btn" onclick="updateChart('Nifty Consumer Durables')">Nifty Consumer Durables</button>
+<button class="btn" onclick="updateChart('Nifty Non-Cyclical Consumer')">Nifty Non-Cyclical Consumer</button>
+<button class="btn" onclick="updateChart('Nifty500 Multicap India Manufacturing 50:30:20')">Nifty500 Multicap India Manufacturing 50:30:20</button>
+<button class="btn" onclick="updateChart('Nifty100 ESG Sector Leaders')">Nifty100 ESG Sector Leaders</button>
+<button class="btn" onclick="updateChart('NIFTY100 Alpha 30')">NIFTY100 Alpha 30</button>
+<button class="btn" onclick="updateChart('NIFTY500 Value 50')">NIFTY500 Value 50</button>
+<button class="btn" onclick="updateChart('Nifty100 Low Volatility 30')">Nifty100 Low Volatility 30</button>
+<button class="btn" onclick="updateChart('NIFTY Alpha Low-Volatility 30')">NIFTY Alpha Low-Volatility 30</button>
+<button class="btn" onclick="updateChart('NIFTY Quality Low-Volatility 30')">NIFTY Quality Low-Volatility 30</button>
+<button class="btn" onclick="updateChart('NIFTY Alpha Quality Low-Volatility 30')">NIFTY Alpha Quality Low-Volatility 30</button>
+<button class="btn" onclick="updateChart('NIFTY Alpha Quality Value Low-Volatility 30')">NIFTY Alpha Quality Value Low-Volatility 30</button>
+<button class="btn" onclick="updateChart('NIFTY200 Quality 30')">NIFTY200 Quality 30</button>
+<button class="btn" onclick="updateChart('NIFTY Midcap150 Quality 50')">NIFTY Midcap150 Quality 50</button>
+<button class="btn" onclick="updateChart('Nifty200 Momentum 30')">Nifty200 Momentum 30</button>
+<button class="btn" onclick="updateChart('Nifty India Manufacturing')">Nifty India Manufacturing</button>
+<button class="btn" onclick="updateChart('Nifty200 Alpha 30')">Nifty200 Alpha 30</button>
+<button class="btn" onclick="updateChart('Nifty Midcap150 Momentum 50')">Nifty Midcap150 Momentum 50</button>
+<button class="btn" onclick="updateChart('Nifty Smallcap250 Quality 50')">Nifty Smallcap250 Quality 50</button>
+<button class="btn" onclick="updateChart('Nifty Smallcap250 Momentum Quality 100')">Nifty Smallcap250 Momentum Quality 100</button>
+<button class="btn" onclick="updateChart('Nifty MidSmallcap400 Momentum Quality 100')">Nifty MidSmallcap400 Momentum Quality 100</button>
+<button class="btn" onclick="updateChart('NIFTY100 ESG')">NIFTY100 ESG</button>
+<button class="btn" onclick="updateChart('NIFTY100 Enhanced ESG')">NIFTY100 Enhanced ESG</button>
+<button class="btn" onclick="updateChart('Nifty 50 Arbitrage')">Nifty 50 Arbitrage</button>
+<button class="btn" onclick="updateChart('Nifty 8-13 yr G-Sec')">Nifty 8-13 yr G-Sec</button>
+<button class="btn" onclick="updateChart('Nifty 4-8 yr G-Sec Index')">Nifty 4-8 yr G-Sec Index</button>
+<button class="btn" onclick="updateChart('Nifty 11-15 yr G-Sec Index')">Nifty 11-15 yr G-Sec Index</button>
+<button class="btn" onclick="updateChart('Nifty 15 yr and above G-Sec Index')">Nifty 15 yr and above G-Sec Index</button>
+<button class="btn" onclick="updateChart('Nifty Composite G-sec Index')">Nifty Composite G-sec Index</button>
+<button class="btn" onclick="updateChart('Nifty 10 yr Benchmark G-Sec')">Nifty 10 yr Benchmark G-Sec</button>
+<button class="btn" onclick="updateChart('Nifty 10 yr Benchmark G-Sec (Clean Price)')">Nifty 10 yr Benchmark G-Sec (Clean Price)</button>
+<button class="btn" onclick="updateChart('Nifty 1D Rate Index')">Nifty 1D Rate Index</button>
+<button class="btn" onclick="updateChart('Nifty50 USD')">Nifty50 USD</button>
+
+
+        </div>
+        <div id="chart" class="chart">
+            <h2 id="chart-title" class="chart_title">Nifty 50</h2>
+            <h3 id="index_date" class="index_date">Date : 22-03-2024</h3>
+            <div id="data_changes" class="data_changes">
+                <p id="points_change">Points Change: "84.8"</p>
+                <p id="change_percent">Change Percent: "0.39"</p>
+                <p id="volume">Volume: "388656439"</p>
+                <p id="turnover_rs_cr">Turnover Rs Cr: "39023.19"</p>
+                <p id="pe_ratio">PE Ratio: "22.81"</p>
+                <p id="pb_ratio">PB Ratio: "3.87"</p>
+                <p id="div_yield">Div Yield: "1.21"</p>
+            </div>
+            <div class="chartBody">
+                <canvas id="myChart" class="myChart"></canvas> <!--for rendering the chart-->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- script tag of chart.js for plotting the chart -->
+    <script src="./script.js"></script>
+</body>
+</html>

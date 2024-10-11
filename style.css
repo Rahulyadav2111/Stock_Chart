@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+}
+.search-container {
+    display: none;
+}
+.index_names{
+    background-color: rgb(249, 249, 249);
+    gap: 10px;
+    box-shadow: -10px -2px 5px 10px #000000;
+    width: 20%;
+    height: 100vh;
+    overflow-y: scroll
+}
+.index_names .btn{
+    margin: 5px 10px;
+    padding:5px;
+    width: 90%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #000000;
+    background-color: #576dffb6;
+    cursor: pointer;
+}
+.index_names .btn:focus{
+   background-color: blue;
+}
+.chart{
+    width: 80%;
+    padding-top: 30px;
+    padding-left: 5px;
+    margin:20px;
+    overflow-x: scroll; /* Allow horizontal scroll */
+    white-space: nowrap; /* Prevent wrapping of content */
+    border: 1px solid black;
+}
+.chart .data_changes{
+    position: sticky;
+    left: 0;
+   padding: 10px 40px;
+   display: flex;
+   gap: 30px;
+}
+.chart .index_date{
+    position: sticky;
+    left: 0;
+}
+.chart .chart_title{
+    position: sticky;
+    left: 0;
+}
+
+.chart .data_changes p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.chart .chartBody{
+    width: 800cm;
+}
+.chart .chartBody .myChart{
+    height: 550px;
+}
+.chart .chart_types{
+    text-align: left;
+    margin-bottom: 30px;
+}
+.chart .chart_types button{
+    padding: 10px 25px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px; /* Size of the spinner */
+    height: 50px; /* Size of the spinner */
+    animation: spin 1s linear infinite; /* Spin animation */
+    position: absolute; /* Center the loader */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@media screen and (max-width:600px) {
+    *{
+        overflow:scroll;
+    }
+    .container{
+        display: flex;
+        margin-top: 10px;
+        padding: 10px;
+        flex-direction: column;
+    }
+    .search-container{
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .search-container .searchInput{
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #fbfafa;
+        border-radius: 20px;
+
+
+    }
+    .suggestions{
+        height: 200px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    .suggestions-container {
+        position: absolute;
+        z-index: 1000;
+    }
+    
+    .suggestion-item {
+        padding:5px;
+
+        cursor: pointer;
+    }
+    .suggestion-item button{
+        width: 100%;
+        padding:3px 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #3498db;
+    }
+    
+    .suggestion-item:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .index_names {
+        display: none;
+    }
+    .chart{
+        width: 100%;
+        padding-top: 10px;
+        margin:0px;
+        margin-top:20px;
+    }
+    .chart .data_changes{
+       padding:0px;
+       display: flex;
+       flex-direction: column;
+       gap: 5px;
+    }
+    .chart .chartBody .myChart{
+        height: 350px;
+    }
+  }
